@@ -29,6 +29,7 @@ def get_new_secret_number():
 
 class Senior(AbstractUser):
     target = models.OneToOneField('Senior', models.SET_NULL, null=True, blank=True)
+    in_game = models.BooleanField(default=False)
     username_validator = STUDENT_ID_VALIDATOR
     first_name = models.CharField(max_length=64, validators=[NAME_FIELD_VALIDATOR])
     last_name = models.CharField(max_length=64, validators=[NAME_FIELD_VALIDATOR])
